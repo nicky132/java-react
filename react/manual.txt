@@ -1,0 +1,18 @@
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+yum list docker-ce --showduplicates | sort -r
+
+sudo yum install docker-ce #由于repo中默认只开启stable仓库，故这里安装的是最新稳定版 3:20.10.8-3.el7
+sudo yum install <FQPN>  # 例如：sudo yum install docker-ce-17.12.0.ce
+
+sudo systemctl start docker #  启动docker
+sudo systemctl enable docker # 设置开机自启
+
+docker build -f Dockerfile -t myFrontend:v1.0 .
+#注意最后那个点是必须的，代表当前目录
+
+docker run -d --name nginx01 -p 3333:666 --restart=always myFrontend:v1.0
+
+#https://blog.csdn.net/qq_32442973/article/details/119963691

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../Downloads/single-spa-portal-example"
+		},
+		{
+			"path": "../../../../testMicoFrontend"
+		}
+	],
+	"settings": {}
+}
