@@ -18,8 +18,9 @@ function FormPage(props) {
         }).then(res=>{
             let data = res.data;
             if(data.code === 200){
-                message.success(data.message);
-                history.push("/record");
+                message.success(data.message,2,()=>{
+                    history.push("/record");
+                });
             }else{
                 message.error(data.message);
             }
