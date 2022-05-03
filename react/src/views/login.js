@@ -20,7 +20,6 @@ function FormPage(props) {
             if(data.code === 200){
                 message.success(data.message);
                 history.push("/record");
-                window.location.reload();
             }else{
                 message.error(data.message);
             }
