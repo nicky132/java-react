@@ -19,13 +19,14 @@ function FormPage(props) {
             let data = res.data;
             if(data.code === 200){
                 localStorage.setItem('__config_center_token','Bearer '+data.obj.token);
-                message.success(data.message,2,()=>{
+                message.success(data.message,1,()=>{
                     history.push("/record");
                 });
             }else{
                 message.error(data.message);
             }
         }).catch((error)=>{
+            // console.log("error",error);
             message.error('网络异常!');
         })
     };

@@ -1,9 +1,22 @@
 .App {
   text-align: center;
-  background: url("~/assets/images/bg.jpg") no-repeat;
+  background: url("~@/assets/images/bg.jpg") no-repeat;
   background-size: cover;
 }
 
+.app .header img{
+  height: 100%;
+  width: auto;
+}
+.app .header{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  padding-right: 20px;
+}
+.app .header .ant-dropdown-trigger{
+  color: white;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
