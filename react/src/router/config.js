@@ -10,11 +10,11 @@ export const routerConfig = [
   },{
     path:'/index',
     component:index,
-    //auth:true,
+    auth:true,
   },{
     path:'/record',
     component:record,
-    //auth:true,
+    auth:true,
   },{
     path:'/login',
     component:login,

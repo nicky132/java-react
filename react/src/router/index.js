@@ -6,7 +6,7 @@ class Routes extends Component {
   render() {
     return (
       <Switch>
-        <FrontendAuth config={routerConfig} />
+        <FrontendAuth config={routerConfig} {...this.props}/>
       </Switch>
     )
   }
