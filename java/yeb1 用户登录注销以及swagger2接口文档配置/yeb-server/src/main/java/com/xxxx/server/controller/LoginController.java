@@ -25,14 +25,14 @@ public class LoginController {
     @Autowired
     private IAdminService adminService;
     @ApiOperation(value = "登录之后返回token")
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "http://47.114.150.30",maxAge = 3600)
     @PostMapping("/login")
     public RespBean login(@RequestBody AdminLoginParam adminLoginParam, HttpServletRequest request){
        return adminService.login(adminLoginParam.getUsername(),adminLoginParam.getPassword(),request);
     }
 
     @ApiOperation(value="获取当前用户的信息")
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "http://47.114.150.30",maxAge = 3600)
     @GetMapping("/admin/info")
     public Admin getAdminInfo(Principal principal){
         if(null == principal){
@@ -45,7 +45,7 @@ public class LoginController {
     }
 
     @ApiOperation(value="退出登录")
-    @CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "http://47.114.150.30",maxAge = 3600)
     @PostMapping("/logout")
     public RespBean logout(){
         return RespBean.success("注销成功！");
