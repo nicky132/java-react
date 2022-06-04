@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.xxxx.server.pojo.RespBean;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 
 /**
  * <p>
@@ -30,4 +31,6 @@ public interface IAdminService extends IService<Admin> {
      * @return
      */
     Admin getAdminByUserName(String username);
+
+    RespBean getAdmin(Principal principal);
 }

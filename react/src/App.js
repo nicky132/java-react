@@ -27,12 +27,11 @@ function App () {
         }
     }).then(res=>{
         let data = res.data;
-        setUsername(data.name);
-        // if(data.code === 200){
-        //   console.log("msg",data)
-        // }else{
-        //     message.error(data.message);
-        // }
+        if(data.code === 200){
+          setUsername(data.obj.name);
+        }else{
+            message.error(data.message);
+        }
     }).catch((error)=>{
         message.error('网络异常!');
     })
@@ -99,10 +98,10 @@ function App () {
                   breakpoint="lg"
                   collapsedWidth="0"
                   onBreakpoint={broken => {
-                    console.log(broken);
+                    // console.log(broken);
                   }}
                   onCollapse={(collapsed, type) => {
-                    console.log(collapsed, type);
+                    // console.log(collapsed, type);
                   }}
                   className="sider"
                 >

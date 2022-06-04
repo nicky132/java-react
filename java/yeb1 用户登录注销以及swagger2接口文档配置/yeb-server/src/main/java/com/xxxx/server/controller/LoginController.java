@@ -34,20 +34,14 @@ public class LoginController {
     @ApiOperation(value="获取当前用户的信息")
     @CrossOrigin(origins = "http://47.114.150.30",maxAge = 3600)
     @GetMapping("/admin/info")
-    public Admin getAdminInfo(Principal principal){
-        if(null == principal){
-            return null;
-        }
-        String username = principal.getName();
-        Admin admin = adminService.getAdminByUserName(username);
-        admin.setPassword(null);
-        return admin;
+    public RespBean getAdmin(Principal principal){
+        return adminService.getAdmin(principal);
     }
 
     @ApiOperation(value="退出登录")
     @CrossOrigin(origins = "http://47.114.150.30",maxAge = 3600)
     @PostMapping("/logout")
     public RespBean logout(){
-        return RespBean.success("注销成功！");
+        return RespBean.success(true,"注销成功！");
     }
 }

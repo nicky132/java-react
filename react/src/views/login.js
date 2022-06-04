@@ -26,7 +26,6 @@ function FormPage(props) {
                 message.error(data.message);
             }
         }).catch((error)=>{
-            // console.log("error",error);
             message.error('网络异常!');
         })
     };

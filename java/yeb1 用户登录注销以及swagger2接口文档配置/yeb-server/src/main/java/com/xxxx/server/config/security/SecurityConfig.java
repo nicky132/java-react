@@ -70,14 +70,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers()
                 .cacheControl();
 
-//        http
-//                .authorizeRequests()
-//                .antMatchers("/").permitAll()
-//                .antMatchers("/user/**").hasRole("USER")
-//                .and()
-//                .formLogin().loginPage("/login").defaultSuccessUrl("/user")
-//                .and()
-//                .logout().logoutUrl("/logout").logoutSuccessUrl("/login");
         //添加jwt 登录授权拦截器
         http.addFilterBefore(jwtAuthencationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         //除了拦截器，还可以添加自定义未登录、未授权结果返回
